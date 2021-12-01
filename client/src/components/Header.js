@@ -128,17 +128,17 @@ const Header = () => {
         },
         {
             label: 'Quit',
-            icon: 'pi pi-fw pi-power-off'
+            icon: 'pi pi-fw pi-sign-out'
         }
     ];
-
-    const start = <img alt="logo" src={logo} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} height="40" className="p-mr-2"></img>;
-    const end = <InputText placeholder="Search" type="text" />;
-
     return (
         <div>
             <div className="card">
-                <Menubar model={items} start={start} end={end} />
+                <Menubar model={items} 
+                    start={<img alt="logo" src={logo} height="40" className="p-mr-2"></img>} 
+                    end={<InputText placeholder="Search" type="text" />}>
+
+                </Menubar>
             </div>
         </div>
     );
