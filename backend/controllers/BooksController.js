@@ -22,7 +22,9 @@ const bookAdd = [
 				title: req.body.title,
 				description: req.body.description,
 				isbn: req.body.isbn,
-				author: req.body.author
+				author: req.body.author,
+				price: req.body.price,
+				discount: req.body.discount
 			}
 			var bookResponse = await BookService.addBook(book);
 			await req.body.categories.forEach(item => {

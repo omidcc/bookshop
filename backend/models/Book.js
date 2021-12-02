@@ -6,6 +6,8 @@ var BookSchema = new Schema({
 	title: {type: String},
 	description: {type: String},
 	isbn: {type: String},
+	price: {type: Number},
+	discount: {type: Number},
 	author: { type: Schema.ObjectId, ref: "Authors" },
     categories: [{
         category: { type: Schema.ObjectId, ref: 'Categories' }

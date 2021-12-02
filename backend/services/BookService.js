@@ -35,6 +35,9 @@ exports.bookList = async function(){
             _id: books[i]._id,
             title: books[i].title,
             description: books[i].description,
+            isbn: books[i].isbn,
+            price: books[i].price,
+            discount: books[i].discount,
             author: await Author.findOne({ _id: books[i].author }).exec(),
             categories: await Categories.find({ _id: { $in: books[i].categories } })
         });
