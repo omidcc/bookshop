@@ -1,10 +1,17 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
+import BookItemList from "./BookItemList";
 
 
 function Container(){
+    const [data, setData] = useState({ books: [] });
+    useEffect(()=>{
+        fetch('api/book/list')
+        .then((res)=>res.json())
+        .then((result)=>setData(result.data));
+    })
     return (
         <div>
-            <h1>This is Container</h1>
+            <BookItemList books={data}/>
         </div>
     )
 }
