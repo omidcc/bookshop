@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+.p-rating-icon.pi.pi-star-fill{
+  color: #ffc107!important;
+}
