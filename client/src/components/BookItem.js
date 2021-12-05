@@ -5,15 +5,18 @@ import { Button } from 'primereact/button';
 
 const BookItem =(props)=>{
     const book = props.book
+    const category = props.book.categories.reduce((pre,cur)=> `${pre.name}, ${cur.name}`)
+    const stockStatus = !book.totalStock ? 'SOLD OUT': (book.totalStock < 10 ? 'LOW STOCK':'AVAILABLE')
+    const stockClass = !book.totalStock ? 'badge-out-of-stock': (book.totalStock < 10 ? 'badge-low-stock':'badge-instock')
     const header = (
         <div>
             <div className="row p-2">
                 <div className="col-sm-12 col-md-6">
                     <i className="pi pi-tag me-2"></i>
-                    <span>Horror, Drama</span>
+                    <span className="fw-600">{category}</span>
                 </div>
                 <div className="col-sm-12 col-md-6">
-                    <span className="badge bg-success float-end ms-2">IN STOCK</span>
+                    <span className={`badge-stock float-end ${stockClass}`}>{stockStatus}</span>
                 </div>
             </div>
             <img alt="Card" src={book.cover} style={{"width":"200px","height":"200px"}} className="m-2"/>

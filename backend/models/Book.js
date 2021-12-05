@@ -12,7 +12,8 @@ var BookSchema = new Schema({
 	author: { type: Schema.ObjectId, ref: "Authors" },
     categories: [{
         category: { type: Schema.ObjectId, ref: 'Categories' }
-      }]
+      }],
+	totalStock:{type:Number}
 }, {timestamps: true});
 
 module.exports = mongoose.model("Books", BookSchema);
