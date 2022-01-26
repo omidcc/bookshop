@@ -36,7 +36,7 @@ const BookItem =(props)=>{
         
         <div className="col-md-3 p-4">
             <Card title={book.title} subTitle="" footer={footer} header={header}>
-                <p className="text-start">{book.description.substring(0,150)}.....</p>
+                <p className="text-start">{book.description.substring(0,100)}.....</p>
                 <Rating value={4} stars={5} cancel={false} className="text-warning" tooltip={3.7}/>
             </Card>
         </div>
